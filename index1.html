@@ -13,12 +13,13 @@
         <a href="#" class = "logo">Maya El Refaie's Portfolio</a>
 
         <nav class ="navbar">
-            <a href="#home-content" onclick="smoothScroll('#home-content')">Home</a>
+            <a href="#home" class="hme"onclick="smoothScroll('#home')">Home</a>
             <a href="Maya El Refaie's latest resume.pdf" target="_blank">Resume</a>
             <a href="index2.html">Contact</a>
         </nav>
     </header>
     <section class="home" id="home">
+        <a id="home"></a>
         <div class="home-content">
             <h1>Hello, I'm Maya El Refaie</h1><br>
             <p>A dedicated and adaptable student with a passion for leveraging technology to optimize
@@ -38,7 +39,8 @@
             <h3>About me</h3><br>
             <p>Hey! I'm a third-year Business Technology Management student at Toronto Metroplitan University and I'm currently interning at Veolia WTS as a Business Process Improvement. What drew me to my program is its unique fusion of business principles and cutting-edge technology. Through my coursework, I've learned to analyze complex business challenges, devise strategic solutions, and leverage technology to optimize processes and drive growth. <br> Outside of academics and work, you'll often find me on a volleyball court or lost in a book. When I'm not hitting the books or the court, I'm out exploring new adventures and traveling whenever I get the chance. Always eager to learn and grow, I'm excited about what the future holds.
                <br><br><span>Additionally, I'm the president of the Egyptian Student Association at TMU. My primary aim in this role is to infuse a taste of Egyptian culture into campus life while creating some long lasting friendships among students.</span> </p></div>
-               
+    
+
                <div class="tabs">
                 <p class="tabs-link active-link" onclick="opentab('education')">Education</p>
                 <p class="tabs-link"onclick="opentab('experience')">Experience</p>
@@ -60,25 +62,21 @@
             <div class="tab-contents" id="experience">
                 <div class="veolia">
                     <a href="https://www.veolianorthamerica.com/?utm_term=&utm_campaign=Medical+Waste+TCI&utm_source=adwords&utm_medium=ppc&hsa_acc=5271262931&hsa_cam=1819037904&hsa_grp=78276459814&hsa_ad=388440866280&hsa_src=g&hsa_tgt=dsa-19959388920&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjwiMmwBhDmARIsABeQ7xQ2Y-KY6Z2ZIPe0vOCuudrVXUdz06UQ3KXHBHFuGUzOLQr_cg8pE-QaAiwpEALw_wcB"><img src="veolia.png" alt="The logo of my current work"></a>
-                    <p><span><b> May 2023 - Current</b></span><br><br>Business Process Improvement Intern <br><em>Veolia</em></p><br>
-                    <ul>
-                        <li>Collaborates with executive managers to develop project roadmaps and action plans.</li>
-                        <li>Identified and implemented initiatives that enhanced operational efficiency.</li>
-                        <li>Facilitated orientation programs for new field service employees</li>
-                    </ul>
+                    <p><b> May 2023 - Current</b><br><br><span>Business Process Improvement Intern</span> <br><br>
+                        I collaborated closely with executive managers to develop comprehensive project roadmaps and action plans, ensuring alignment with organizational goals and objectives. I also identified and implemented initiatives aimed at enhancing operational efficiency and driving sustainable improvements. Additionally, I helped in facilitating orientation programs for new field service employees, equipping them with the necessary knowledge and skills to excel in their roles from the outset.</p>
                 </div>
                 <div class="hbc">
                     <a href="https://www.thebay.com"><img src="hbc pic.png" alt="shows a picture of my school"></a>
-                    <p><span> Nov 2021 - May 2023</span><br><br> Sales associate <br><em>Hudson's Bay company</em> </p><br>
+                    <p><span><b>Nov 2021 - May 2023</b></span><br><br> Sales associate <br><em>Hudson's Bay company</em> </p><br>
                     <ul>
                         <li>Successfully marketed and secured 30+ Hudson's Bay Mastercard accounts. </li>
                         <li>Solved complaints in a timely manner and offered discounts to customers to ensure positive outcomes.</li>
                         <li>Worked closely with a diverse team while supporting them with handling cash registers, stock,
                             and merchandising. </li>
                         </ul>
-                </div>
-                <div class="padel">
-               <h3>Non work Experience</h3>
+                </div><br><br>
+            <div class="nonwork">
+               
                 <p><span> Sept 2019 - Aug 2021</span><br><br> Sales associate <br><em>Hudson's Bay company</em> </p><br>
                 <ul>
                     <li>Coordinated schedules and timelines for events, to ensure a positive image.</li>
@@ -86,7 +84,7 @@
                         deals for the project budget </li>
                 </ul>
             </div>
-            </div>
+        </div>
             <div class="tab-contents" id="skills">
                 <h2> Technincal Skills</h2><br><br>
                 <ul>
@@ -109,23 +107,24 @@
                     <li>Collaborative Team Member</li>
                     <li>Innovative Leader</li>
                 </ul>
-            </div>
-        </div>   
+            </div> 
+        </div>
     </div>
 </section>
-<section>
 <footer>
-   
-    
-    <select id="theme-select" onchange="changeTheme(this.value)">
-        <option value="default">Default</option>
-        <option value="dark">Dark</option>
-        <option value="light">Light</option>
-    </select>
-
+    <p>copyright &copy; <script>document.write(new Date().getFullYear());</script>, Maya El Refaie</p>
+<label for="fontSizeSelect">Select Font Size:</label>
+        <select id="fontSizeSelect" onchange="changeFontSize(this.value)">
+        <option value="12">Small</option>
+        <option value="16" selected>Medium</option>
+        <option value="20">Large</option>
+        </select>
+<select id="theme-select" onchange="changeTheme(this.value)">
+    <option value="default">Default</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+</select>
 </footer>
-</section>
-
     <script>
         var tablinks = document.getElementsByClassName("tabs-link");
 var tabcontents = document.getElementsByClassName("tab-contents");
@@ -164,22 +163,17 @@ var tabcontents = document.getElementsByClassName("tab-contents");
     t--;
     return -c / 2 * (t * (t - 2) - 1) + b;
   }
-  
-}
-// Function to change the color theme
-function changeTheme(theme) {
-    document.body.className = theme + '-mode';
-    // Save the selected theme in localStorage or cookies to persist across page reloads
-    localStorage.setItem('theme', theme);
-}
 
-// Check if a theme is saved in localStorage and apply it
-document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        changeTheme(savedTheme);
     }
-});
+    function changeFontSize(size) {
+    document.getElementById('content').style.fontSize = size + 'px';
+  }
+
+function changeFontSize(size) {
+    document.getElementById('content').style.fontSize = size + 'px';
+  }
+
+
     </script>
    
    
